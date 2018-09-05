@@ -44,8 +44,8 @@ const parseDriversData = async (link) => {
     if (!response) throw new Error('Got no response!');
 
     let result;
-    response.replace(/driver_infos: (.*)\}\}/igu, (line, ...[value]) => {
-        result = JSON.parse(value+"}}");
+    response.replace(/driver_infos: (.*\}\})/igu, (line, ...[value]) => {
+        result = JSON.parse(value);
     });
 
     console.log(`amount drivers: ${Object.entries(result).length}`);
