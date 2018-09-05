@@ -28,7 +28,7 @@ const parseDriversData = async (link) => {
 
     if (!response || !response.drivers) throw new Error('Got bad response!');
 
-    console.log(`ther are ${Object.entries(response.drivers).length} drivers in response`);
+    console.log(`there are ${Object.entries(response.drivers).length} drivers in response`);
 
     return Object.entries(response.drivers).map(([k, v]) => ({[v.phone]: v}));
 
